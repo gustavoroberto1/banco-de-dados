@@ -1,13 +1,3 @@
-SELECT MIN(preco_venda) AS Menor_Valor, MAX(preco_venda) as MaiorValor FROM veiculos
-SELECT AVG(preco_venda) FROM veiculos
-SELECT SUM(preco_venda) FROM veiculos
-SELECT * FROM veiculos ORDER BY preco_venda ASC
-SELECT * FROM veiculos ORDER BY preco_venda ASC LIMIT 3 OFFSET 0
-
-SELECT COUNT(DISTINCT pais_origem) FROM fabricantes
-SELECT COUNT(DISTINCT modelo) FROM veiculos
-SELECT COUNT(id) FROM veiculos
-
 SELECT * FROM veiculos
 SELECT MAX(preco_venda) FROM veiculos
 SELECT MAX(preco_venda) AS MAIOR_PRECO FROM veiculos
@@ -43,6 +33,11 @@ SELECT * FROM clientes WHERE email LIKE '%outlook.com'
 SELECT * FROM veiculos
 SELECT * FROM veiculos WHERE modelo LIKE '_____'
 SELECT * FROM veiculos WHERE modelo LIKE '__R%'
+SELECT * FROM veiculos WHERE modelo LIKE '__r%'
+SELECT * FROM veiculos WHERE LOWER(modelo) LIKE '__r%'
+SELECT * FROM veiculos WHERE modelo ILIKE '__r%'
+SELECT * FROM veiculos WHERE modelo ILIKE '__R%'
+
 
 SELECT * FROM clientes
 SELECT * FROM clientes ORDER BY nome
