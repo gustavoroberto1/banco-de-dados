@@ -5,18 +5,6 @@ INSERT INTO veiculos (modelo, marca, ano_fabricacao, quilometragem, preco_venda,
 ('HB20', 'Hyundai', 2017, 50000.00, 62000.00, 'PRATA'),
 ('Gol', 'Volkswagen', 2010, 120000.00, 30000.00, 'AZUL');
 
-CREATE TABLE vendas (
-    id SERIAL PRIMARY KEY,
-    cliente_id INT NOT NULL,
-    id_veiculo INT NOT NULL,
-    valor_total DECIMAL(15, 2) NOT NULL,
-    data_venda DATE NOT NULL,
-    metodo_pagamento metodo_pagamento_enum NOT NULL,
-    FOREIGN KEY (cliente_id) REFERENCES clientes(id),
-    FOREIGN KEY (id_veiculo) REFERENCES veiculos(id)
-);
-
--- Inserir dados na tabela vendas
 INSERT INTO vendas (cliente_id, id_veiculo, valor_total, data_venda, metodo_pagamento) VALUES
 (1, 1, 90000.00, '2023-05-10', 'CARTAO'),
 (2, 2, 120000.00, '2024-06-15', 'BOLETO'),
